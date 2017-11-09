@@ -1,0 +1,13 @@
+﻿  main.cpp
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(71): warning C4346: TypeNode: зависимое имя не является типом
+  c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(71): note: укажите префикс "typename" для задания типа
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(71): error C2061: синтаксическая ошибка: идентификатор "TypeNode"
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(77): error C2065: Value: необъявленный идентификатор
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(77): error C2065: Key: необъявленный идентификатор
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(77): error C2065: numLevels: необъявленный идентификатор
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(77): error C2923: SkipList: "Value" не является допустимым аргументом типа шаблон для параметра "Value"
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(77): error C2923: SkipList: "Key" не является допустимым аргументом типа шаблон для параметра "Key"
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(77): error C2975: numLevels: недопустимый аргумент шаблона для "SkipList", требуется константное выражение времени компиляции
+  c:\github\hw8\cyberpolice\cyberpolice\skiplist.h(54): note:  см. объявление "numLevels"
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(78): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+c:\github\hw8\cyberpolice\cyberpolice\skiplist.hpp(78): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
