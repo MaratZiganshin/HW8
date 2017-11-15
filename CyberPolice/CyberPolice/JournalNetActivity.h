@@ -21,7 +21,7 @@ public:
 	JournalNetActivity(void);
 	~JournalNetActivity(void);
 
-	void dumpJournal(ostream & out);
+	void dumpJournal(ostream & out) const;
 	void parseLog(string fullpath);
 	void outputSuspiciousActivities(string site, const TimeStamp & from, const TimeStamp & to) const;
 };

@@ -36,7 +36,7 @@ void JournalNetActivity<numLevels>::parseLog(string fullpath)
 
 // Just dumps the whole journal to the out stream
 template <int numLevels>
-void JournalNetActivity<numLevels>::dumpJournal(ostream & out)
+void JournalNetActivity<numLevels>::dumpJournal(ostream & out) const
 {
 	TypeList::TypeNode * prehead, * run;
 	prehead = m_Journal.getPreHead();
@@ -50,6 +50,7 @@ void JournalNetActivity<numLevels>::dumpJournal(ostream & out)
 		out << run->m_key;
 		out << " ";
 		out << run->m_value;
+        out << endl;
 	}
 }
 
@@ -58,5 +59,11 @@ template <int numLevels>
 void JournalNetActivity<numLevels>::outputSuspiciousActivities(
 	string hostSuspicious, const TimeStamp & timeFrom, const TimeStamp & timeTo) const
 {
-	// The code here was occasionaly lost....
+    NodeSkipList<NetActivity, TimeStamp, numLevels>* temp = m_Journal.findLastLessThan(timeFrom)->m_next;
+    while (temp->m_key <= timeTo && temp != m_Journal.getPreHead())
+    {
+        if (temp->m_value.m_host == hostSuspicious)
+            std::cout << temp->m_key << " " << temp->m_value << endl;
+        temp = temp->m_next;
+    }
 }

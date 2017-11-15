@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="JournalNetActivity.h" />
+    <ClInclude Include="JournalNetActivity.hpp" />
+    <ClInclude Include="NetActivity.h" />
     <ClInclude Include="OrderedList.h" />
     <ClInclude Include="OrderedList.hpp" />
     <ClInclude Include="SkipList.h" />
@@ -27,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NetActivity.cpp" />
     <ClCompile Include="TimeStamp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

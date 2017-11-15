@@ -3,14 +3,10 @@
 #include <string>
 #include <ctime>
 
-#include "SkipList.h"
-
-#include "OrderedList.h"
-#include "TimeStamp.h"
-//#include "JournalNetActivity.h"
+#include "JournalNetActivity.h"
 
 using namespace std;
-/*
+
 // Test timer
 long gl_ticktack;
 
@@ -34,7 +30,8 @@ void testJournal(const JournalNetActivity<numLevels> & journal, string host, con
 	cout << "SkipList: Test #" << cntTest << endl << endl;
 
 	tick();
-	journal.outputSuspiciousActivities(host, from, to);
+    journal.dumpJournal(cout);
+	//journal.outputSuspiciousActivities(host, from, to);
 	tack("Test took");
 	cout << "===============================================================================" << endl;
 
@@ -44,23 +41,20 @@ void testJournal(const JournalNetActivity<numLevels> & journal, string host, con
 
 int main (int argc, char* argv[])
 {
-    SkipList<int, int, 5> sl;
-    
-    int k = 1;
-    //cout << ts;
-    system("pause");
+    srand(time(0));
 	// Test SkipList over integers
-	/*typedef SkipList<int,int,15> TypeSkipList;
+	typedef SkipList<int,int,5> TypeSkipList;
 	typedef TypeSkipList::TypeNode TypeSkipNode;
 
 	TypeSkipList list;
 	tick();
 	int i = 0;
-	for (i = 0; i < 200 * 1000; ++i)
+	for (i = 0; i < 2000*100; ++i)
 	{
 		list.insert(i, i);
 	}
 	tack("SkipList over integers creation");
+
 
 	TypeSkipNode * node = 0;
 
@@ -74,32 +68,35 @@ int main (int argc, char* argv[])
 	node = list.findFirst(i - 5);
 	cout << "Element found:" << node->m_value << endl;
 	tack("SkipList over integers searching");
-	// End of: Test SkipList over integers
-
-	try{
+    system("pause");
+	// End of: Test SkipList over integers*/
+    
+	/*try{
 		// Test #1
-		JournalNetActivity<5> journal1;
-		journal1.parseLog("test1.log");
-		testJournal(journal1, "e-maxx.ru", TimeStamp(2015,6,10,10,33,1), TimeStamp(2015,6,10,10,33,4));
+		JournalNetActivity<15> journal1;
+		journal1.parseLog("C:\\GitHub\\HW8\\CyberPolice\\CyberPolice\\test1.log");
+		testJournal(journal1, "e-maxx.ru", TimeStamp(2015,6,10,10,33,2), TimeStamp(2015,6,10,10,33,8));
 
 		// Test #2
-		JournalNetActivity<5> journal2;
-		journal2.parseLog("test2.log");
+		JournalNetActivity<15> journal2;
+		journal2.parseLog("C:\\GitHub\\HW8\\CyberPolice\\CyberPolice\\test2.log");
 		testJournal(journal2, "verisicretproxi.com", TimeStamp(2015,6,10,10,33,54), TimeStamp(2015,6,10,10,33,54));
 
 		// Test #3
-		JournalNetActivity<5> journal3;
+		JournalNetActivity<30> journal3;
 		tick();
-		journal3.parseLog("test3.log");
+		journal3.parseLog("C:\\GitHub\\HW8\\CyberPolice\\CyberPolice\\test3.log");
 		tack("Parsing test3.log");
 		testJournal(journal3, "verisicretproxi.com", TimeStamp(2015,6,10,12,27,45), TimeStamp(2015,6,10,12,27,59));
 
 		// Test #4
-		JournalNetActivity<5> journal4;
+		JournalNetActivity<30> journal4;
 		tick();
-		journal4.parseLog("test4.log");
+		journal4.parseLog("C:\\GitHub\\HW8\\CyberPolice\\CyberPolice\\test4.log");
 		tack("Parsing test4.log:");
 		testJournal(journal4, "verisicretproxi.com", TimeStamp(2015,6,10,22,30,20), TimeStamp(2015,6,10,22,30,50));
+
+        system("pause");
 	}
 	catch(exception &e){
 		cout << e.what();

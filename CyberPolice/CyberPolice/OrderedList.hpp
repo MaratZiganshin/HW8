@@ -19,10 +19,11 @@ template <class Value, class Key, class Node >
 void OrderedList<Value,Key,Node>::insert(Value value, Key key)
 {
 	Node * run = m_pPreHead;
-	while (run->m_next != m_pPreHead)
+    run = findLastLessThan(key);
+	/*while (run->m_next != m_pPreHead)
 	{
 		run = run->m_next;
-	}
+	}*/
 
 	Node * tmp = new Node;
 	tmp->m_next = run->m_next;
